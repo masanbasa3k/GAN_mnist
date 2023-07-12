@@ -13,4 +13,11 @@ with open("generated_image.pickle", "rb") as file:
 #predict the result
 result = model.predict(img)
 
-print("Üretilen görüntü rakamı:", result)
+# print("Üretilen görüntü rakamı:", result)
+
+en_yuksek_indeks = np.argmax(result)
+
+# Tahmin edilen rakam
+tahmin_edilen_rakam = en_yuksek_indeks
+
+print("Tahmin edilen rakam:", tahmin_edilen_rakam)

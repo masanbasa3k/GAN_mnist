@@ -6,17 +6,16 @@ from keras.models import load_model
 import numpy as np
 import pickle
 
-# Generator modelını yükle
+# Load Generator model
 generator = load_model('generator_model.h5')
 
-# Gürültü vektörü oluştur
+# Generate noise vector
 noise = np.random.normal(0, 1, (1, 100))
 
-# Görüntüyü üret
+# Create the image
 generated_image = generator.predict(noise)
 
-# Üretilen görüntüyü kaydet
-
+# Save the image
 with open("generated_image.pickle","wb") as file:
     pickle.dump(generated_image, file)
 
